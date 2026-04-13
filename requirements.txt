@@ -1,0 +1,9 @@
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+PyYAML>=6.0
+qutip>=5.0
+qutip-qip>=0.4
+qiskit>=1.0
+mqt.bench>=1.1

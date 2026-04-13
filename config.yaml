@@ -1,0 +1,74 @@
+metadata:
+  artifact_name: qsys_audit
+  description: Offline workload auditor for quantum operating systems and schedulers.
+  author: Anonymous Authors
+  institution: Blinded for Review
+
+single_qubit_gate:
+  lambda_coin: 0.7853981633974483  # pi/4
+  theta_gate: 1.5707963267948966   # pi/2
+  sigma: 0.2
+  duration: 1.0
+
+hardware_constraints:
+  max_static_coupling: 0.5
+  max_drive_amplitude: 0.5
+  detuning_default: 10.0
+
+stress_profiles:
+  calibrated:
+    J1Q: 0.0
+    JQ2: 0.0
+    A1: 0.0
+    A2: 0.0
+    Aro: 0.0
+    delta1: 0.0
+    delta2: 0.0
+    delta_ro: 0.0
+  moderate:
+    J1Q: 0.5
+    JQ2: 0.5
+    A1: 0.0
+    A2: 0.0
+    Aro: 0.0
+    delta1: 10.0
+    delta2: 10.0
+    delta_ro: 0.0
+  aggressive:
+    J1Q: 0.5
+    JQ2: 0.5
+    A1: 0.5
+    A2: 0.5
+    Aro: 0.5
+    delta1: 10.0
+    delta2: 10.0
+    delta_ro: 0.0
+
+verification_thresholds:
+  eps_d_pass: 0.02
+  eps_log_pass: 0.05
+  eps_inc_pass: 0.05
+  d_hard: 0.30
+  log_hard: 0.90
+  inc_hard: 0.50
+
+cnot:
+  theta_zx: 0.9
+  rx_target_corr: -1.5707963267948966
+  rz_control_corr: -1.6408
+  beta_ix: 0.2
+  gamma_zi: 0.05
+  sigma: 0.25
+  duration: 1.5
+  nsteps: 120
+
+workloads:
+  default: ghz
+  supported:
+    - ghz
+    - graph_state
+    - w_state
+    - qft
+    - qaoa
+    - vqe_su2
+    - vqe_two_local
