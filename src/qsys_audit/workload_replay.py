@@ -3,9 +3,6 @@
 We map two-qubit workloads into a supported gate basis and replay them on a
 hybrid model where one-qubit gates are ideal and CNOT uses the echoed CR-CNOT
 physical sequence. This mirrors the original notebook's cross-layer framing.
-
-Author: Anonymous Authors
-Institution: Blinded for Review
 """
 
 from __future__ import annotations

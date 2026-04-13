@@ -1,8 +1,5 @@
 # qsys_audit
 
-Author: Anonymous Authors  
-Institution: Blinded for Review
-
 We present an offline workload auditor for quantum operating systems and schedulers. Our framework bridges pulse-level physical simulation and workload-level risk profiling by combining Hamiltonian evolution, process reconstruction, and replay of algorithmic workloads under bounded concurrent stress.
 
 ## Why This Tool
@@ -69,6 +66,3 @@ We model physical execution in a three-qubit topology q0-Q-q2:
 
 For reconstruction, we perform one-qubit QPT and fit an isometry-plus-noise factorization $E_{phys} \approx N \circ U_{eff}$. We then report process distance and coherent/incoherent deviation metrics. For workload-level risk, we replay algorithmic circuits after decomposition into $\{rx, ry, rz, cx\}$, where $cx$ is realized by the echoed CR-CNOT pulse model.
 
-## Anonymity Notice
-
-This artifact is intentionally anonymized for double-blind review. No personal identifiers, affiliations, or identifying URLs are included.

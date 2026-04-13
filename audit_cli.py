@@ -1,8 +1,4 @@
-"""Command-line entry point for qsys_audit.
-
-Author: Anonymous Authors
-Institution: Blinded for Review
-"""
+"""Command-line entry point for qsys_audit."""
 
 from __future__ import annotations
 

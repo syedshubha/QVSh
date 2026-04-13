@@ -1,8 +1,6 @@
 metadata:
   artifact_name: qsys_audit
   description: Offline workload auditor for quantum operating systems and schedulers.
-  author: Anonymous Authors
-  institution: Blinded for Review
 
 single_qubit_gate:
   lambda_coin: 0.7853981633974483  # pi/4

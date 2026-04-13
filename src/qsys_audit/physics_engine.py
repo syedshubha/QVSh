@@ -4,9 +4,6 @@ This module owns pulse-level Hamiltonian construction and bounded concurrent
 stress definitions. We simulate a three-qubit line q0-Q-q2 where Q is the
 active logical qubit for one-qubit characterization and (Q, q2) is the active
 pair for echoed CR-CNOT workload replay.
-
-Author: Anonymous Authors
-Institution: Blinded for Review
 """
 
 from __future__ import annotations

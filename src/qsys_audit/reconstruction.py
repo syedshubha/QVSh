@@ -4,9 +4,6 @@ This module provides three reconstruction pathways:
 1. Process tomography (QPT) and Choi assembly.
 2. Isometry-plus-noise fitting from a physical Choi matrix.
 3. Shadow-assisted output-state estimation for lightweight audits.
-
-Author: Anonymous Authors
-Institution: Blinded for Review
 """
 
 from __future__ import annotations
