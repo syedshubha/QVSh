@@ -141,6 +141,8 @@ class PhysicsEngine:
     def _background_terms_3q(
         self, stress: StressProfile, t_duration: float
     ) -> Tuple[qt.Qobj, List[List]]:
+        # Rotating-frame H_rest: all couplings/amplitudes/detunings are rates
+        # in units of 1/T_gate; do NOT add a bare-frame omega*sigma_z term here.
         h_couple_1q = stress.J1Q * qt.tensor(qt.sigmay(), qt.sigmax(), self.I)
         h_couple_q2 = stress.JQ2 * qt.tensor(self.I, qt.sigmax(), qt.sigmay())
         h_static = h_couple_1q + h_couple_q2
@@ -178,7 +180,20 @@ class PhysicsEngine:
         stress: StressProfile,
         nsteps: int = 50,
     ) -> qt.Qobj:
-        """Run one-qubit probe evolution in the three-qubit environment."""
+        """Run one-qubit probe evolution in the three-qubit environment.
+
+        The simulator works in the rotating frame with respect to the bare
+        qubit frequencies, so the QUV evolution intentionally contains no
+        explicit ``omega * sigma_z / 2`` drift term; the absence of such a
+        term is a frame choice, not a missing physical effect. All Hamiltonian
+        rates -- static couplings ``J``, neighbor and readout drive amplitudes
+        ``A``, and detunings ``delta`` -- are dimensionless quantities expressed
+        in natural units of ``1 / T_gate``, where ``T_gate`` is set by
+        ``config.single_qubit_gate.duration``. Stress-regime values such as
+        ``J = 0.5``, ``A = 0.5``, and ``delta = 10`` should therefore be read
+        as rates in those units, and any conversion to absolute frequency
+        requires the user to fix a concrete value of ``T_gate``.
+        """
         state_init_3q = qt.tensor(self.zero.proj(), qubit_q_input_dm, self.zero.proj())
 
         gate_cfg = self.config.get("single_qubit_gate", {})
