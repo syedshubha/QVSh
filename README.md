@@ -58,9 +58,9 @@ Supported workload aliases include: ghz, graph_state, w_state, qft, qaoa, vqe_su
 
 ## Methodology Summary
 
-We model physical execution in a three-qubit topology q0-Q-q2:
+We model physical execution in a three-qubit topology q1-Q-q2:
 
-- q0 is an idling neighbor.
+- q1 is an idling neighbor.
 - Q and q2 are the active logical pair.
 - One-qubit probes and workloads are executed under configurable concurrent interference.
 
